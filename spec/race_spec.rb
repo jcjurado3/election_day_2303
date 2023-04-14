@@ -52,4 +52,15 @@ RSpec.describe Race do
       expect(race.open?).to eq(false)
     end
   end
+
+  describe '#winner' do
+    it 'returns false if race is still open' do
+      race = Race.new("Texas Governor")
+      expect(race.winner).to eq(false)
+    end
+
+    it 'returns the winner with the most votes' do
+      
+    end
+  end
 end
