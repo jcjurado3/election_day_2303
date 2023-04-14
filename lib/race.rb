@@ -24,9 +24,10 @@ class Race
 
     def winner
       if @open == false
-        @candidates.select do |candidate|
-          candidate.votes.max
+        winner = @candidates.select do |candidate|
+          candidate.votes
         end
+        winner
       else
         false
       end

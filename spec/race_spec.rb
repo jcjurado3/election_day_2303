@@ -60,7 +60,12 @@ RSpec.describe Race do
     end
 
     it 'returns the winner with the most votes' do
-      
+      race = Race.new("Texas Governor")
+      candidate1 = race.register_candidate!({name: "Diana D", party: :democrat})
+      candidate2 = race.register_candidate!({name: "Roberto R", party: :republican})
+      candidate1.vote_for!
+      race.close!
+      expect(race.winner).to eq(candidate1)
     end
   end
 end
